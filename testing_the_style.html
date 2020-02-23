@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>OurBalance</title>
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@7.0.0/normalize.css" />
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="transaction-inserter">
+        <form action="">
+          <label for="amount">Amount</label><br>
+          <input type="text" name="amount" id="amount" value="11.20"><br>
+          <label for="category">Category</label><br>
+          <input type="text" name="category" id="category" value="2"><br>
+          <label for="date">Date</label><br>
+          <input type="text" name="date" id="date" value="10/02/2020"><br>
+          <input type="submit" value="Add transaction">
+        </form>
+      </div>
+      <div class="transaction-index">
+        <div class="transaction">
+          <span class="transaction-category">1</span>
+          <span class="transaction-amount">€10.50</span>
+          <span class="transaction-date">01/01/2020</span>
+        </div>
+        <div class="transaction">
+          <span class="transaction-category">2</span>
+          <span class="transaction-amount">€12.20</span>
+          <span class="transaction-date">01/01/2020</span>
+        </div>
+        <div class="transaction">
+          <span class="transaction-category">1</span>
+          <span class="transaction-amount">€18.30</span>
+          <span class="transaction-date">01/01/2020</span>
+        </div>
+        <div class="transaction">
+          <span class="transaction-category">3</span>
+          <span class="transaction-amount">€6.30</span>
+          <span class="transaction-date">01/01/2020</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
