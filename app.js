@@ -32,20 +32,37 @@ const Transaction = (props) => {
   );
 }
 
-const TransactionInserter = (props) => {
-  return (
-    <div className="transaction-inserter">
-      <form action="" onSubmit={ (e) => { props.addTransaction(999999); e.preventDefault(); } }>
-        <label htmlFor="amount">Amount</label><br />
-        <input type="text" name="amount" id="amount" value="11.20" /><br />
-        <label htmlFor="category">Category</label><br />
-        <input type="text" name="category" id="category" value="2" /><br />
-        <label htmlFor="date">Date</label><br />
-        <input type="text" name="date" id="date" value="10/02/2020" /><br />
-        <input type="submit" value="Add transaction" />
-      </form>
-    </div>
-  );
+
+class TransactionInserter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.defaultValues = {
+      amount: 12.80,
+      category: 3,
+      date: new Date().toLocaleDateString(),
+    }
+    this.state = {
+      amount: this.defaultValues.amount,
+      category: this.defaultValues.category,
+      date: this.defaultValues.date
+    }
+  }
+
+  render() {
+    return (
+      <div className="transaction-inserter">
+        <form action="" onSubmit={ (e) => { this.props.addTransaction({ amount: this.state.amount, category: this.state.category, date: this.state.date }); e.preventDefault(); } }>
+          <label htmlFor="amount">Amount</label><br />
+          <input type="number" name="amount" id="amount" placeholder={ this.defaultValues.amount } onChange={ (e) => { this.setState({ amount: e.target.value }) } } /><br />
+          <label htmlFor="category">Category</label><br />
+          <input type="text" name="category" id="category" placeholder={ this.defaultValues.category } onChange={ (e) => { this.setState({ category: e.target.value }) } } /><br />
+          <label htmlFor="date">Date</label><br />
+          <input type="text" name="date" id="date" defaultValue={ this.defaultValues.date } onChange={ (e) => { this.setState({ date: e.target.value }) } }/><br />
+          <input type="submit" value="Add transaction" />
+        </form>
+      </div>
+    )
+  };
 }
 
 class App extends React.Component {
@@ -81,7 +98,7 @@ class App extends React.Component {
   handleAddTransaction = (transaction) => {
     this.setState( prevState => {
       return {
-        transactions: prevState.transactions.concat({ id: 5, amount: 10, category: 11, date: "23/02/2020" })
+        transactions: prevState.transactions.concat({ id: 999999, amount: transaction.amount, category: transaction.category, date: transaction.date })
       }
     })
   }
