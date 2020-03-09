@@ -14,7 +14,6 @@ body {
 
 /* COMPONENT STYLES -------------------- */
 
-
 .transaction-inserter {
   width: 300px;
   float: left;
@@ -25,15 +24,6 @@ body {
   background: #fff;
   float: right;
 }
-
-
-
-/* .ourbalance {
-  background: #fff;
-  width: 400px;
-  margin: 70px auto;
-  border-radius: 6px;
-} */
 
 .transaction {
   display: flex;

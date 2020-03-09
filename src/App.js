@@ -1,3 +1,6 @@
+import React from 'react';
+import './App.css';
+
 const TransactionsIndex = (props) => {
   return (
     <div className="transactions-index">
@@ -106,6 +109,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="ourbalance">
+        <h1>OurBalance</h1>
         <TransactionInserter
           addTransaction={ this.handleAddTransaction }
         />
@@ -118,7 +122,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+export default App;
